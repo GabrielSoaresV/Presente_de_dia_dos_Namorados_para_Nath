@@ -16,7 +16,8 @@ body {
 }
 
 .flor {
-  position: absolute;
+  position: fixed;
+  bottom: 0;
   width: 20%;
   height: 50%;
   background: #6ddb63;
