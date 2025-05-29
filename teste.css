@@ -1,0 +1,98 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;    /* 100% da largura da janela */
+  height: 100vh;   /* 100% da altura da janela */
+  overflow: hidden; /* ❌ impede barras de rolagem */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  background: #bb2d2d;
+  padding-top: 50px;
+}
+
+.flor {
+  position: absolute;
+  width: 20%;
+  height: 50%;
+  background: #6ddb63;
+}
+
+.centro {
+  width: 62px;
+  height: 89px;
+  top: 92%;
+  left: 70%;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 10px #ffaa00;
+}
+
+.petala {
+  width: 100px;
+  height: 100px;
+  background: #ff69b4;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.petala1 {
+  position: absolute;
+  background: #ff0000;
+  width: 80px;
+  height: 120px;
+  transform-origin: bottom center;
+  opacity: 0.9;
+  top: 81px;
+  left: 20px;
+}
+
+.petala2 {
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  top: 100px;
+  left: 0;
+  background: blue
+}
+
+.petala3 {
+  border-radius: 100% 100% 0 0;
+  transform: rotate(45deg);
+  top: 50px;
+  right: 0;
+  background: rgb(37, 219, 219);
+  display: none;
+}
+
+.petala4 {
+  bottom: 0;
+  display: none;
+  left: 4%;
+  border-radius: 70% 30% 60% 40% / 50% 60% 40% 50%;
+  transform: rotate(-15deg);
+  background: green;
+}
+
+.petala5 {
+  bottom: 0;
+  left: 50px;
+  display: none;
+}
+
+.petala6 {
+  bottom: 0;
+  left: 50px;
+  display: none;
+}
+
+.caule {
+  width: 10px;
+  height: 150px;
+  background: green;
+  margin-top: -20px;
+}
