@@ -21,6 +21,13 @@ body {
   padding: 50px 0px;
 }
 
+.garden {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .night {
   position: fixed;
   left: 50%;
@@ -45,6 +52,8 @@ body {
 }
 .flower--1 {
   animation: moving-flower-1 4s linear infinite;
+  left: 10%;
+  transform: scale(0.8);
 }
 .flower--1 .flower__line {
   height: 70vmin;
