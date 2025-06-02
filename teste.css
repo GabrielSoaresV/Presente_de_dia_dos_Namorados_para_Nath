@@ -1,62 +1,57 @@
-/* Reset e background */
 html, body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  /*background: linear-gradient(to top, #9e2a2a 0%, #e07c7c 100%);*/
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex;
   overflow: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Container principal aumentado */
-
 .tulipa-container {
   position: relative;
   width: 140px;
   height: 240px;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-bottom: 100px; 
+  padding-bottom: 0px;
 }
-
 
 .jardim {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-end;
-  gap: 40px 30px;
-  padding: 40px;
+  gap: 20px;
+  padding: 0px;
   background: linear-gradient(to top, #9e2a2a 0%, #e07c7c 100%);
   min-height: 100vh;
   overflow-y: auto;
 }
 
-
-/* Caule com gradiente e sombra */
+/* Caule com gradiente e sombra - AGORA POSICIONADO NATURALMENTE ABAIXO */
 .caule {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
+  position: relative;
   width: 10px;
   height: 100px;
   background: linear-gradient(180deg, #1b5e20 0%, #2e7d32 100%);
   border-radius: 12px 12px 4px 4px;
-  transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 1;
+  z-index: 0;
+  margin-top: -107px;
+  right: 54%;
 }
-
 
 /* Flor */
 .flor {
   position: relative;
+  transform: translateX(-50%);
+  bottom: 100px;
   width: 140px;
   height: 140px;
   z-index: 10;
@@ -64,7 +59,6 @@ html, body {
   justify-content: center;
   align-items: flex-start;
 }
-
 
 /* Centro da flor - botão da tulipa */
 .centro {
@@ -92,7 +86,7 @@ html, body {
   opacity: 0.95;
   filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
   transition: transform 0.4s ease;
-  transform-origin: bottom center;  /* Origem para movimento tipo balanço */
+  transform-origin: bottom center;
 }
 
 /* Esquerda */
@@ -109,28 +103,28 @@ html, body {
 
 /* Direita */
 .petala-right {
-    width: 38px;
-    height: 70px;
-    left: 45%;
-    bottom: -3%;
-    transform: rotate(18deg);
-    background: linear-gradient(135deg, #ff6f91, #ffb97c);
-    border-radius: 60% 100% 50% 60% / 100% 100% 70% 70%;
-    z-index: 6;
+  width: 38px;
+  height: 70px;
+  left: 45%;
+  bottom: -3%;
+  transform: rotate(18deg);
+  background: linear-gradient(135deg, #ff6f91, #ffb97c);
+  border-radius: 60% 100% 50% 60% / 100% 100% 70% 70%;
+  z-index: 6;
 }
 
 /* Central */
 .petala-center {
-width: 45px;
-height: 75px;
-left: 28%;
-bottom: -5%;
-transform: translateY(-10%);
-background: linear-gradient(135deg, #ff3e55, #ffbd7f);
-border-radius: 70% 70% 45% 45% / 85% 85% 60% 60%;
-border: 2px solid #ff5968;
-box-shadow: 0 0 20px #ff7a84;
- z-index: 8;
+  width: 45px;
+  height: 75px;
+  left: 28%;
+  bottom: -5%;
+  transform: translateY(-10%);
+  background: linear-gradient(135deg, #ff3e55, #ffbd7f);
+  border-radius: 70% 70% 45% 45% / 85% 85% 60% 60%;
+  border: 2px solid #ff5968;
+  box-shadow: 0 0 20px #ff7a84;
+  z-index: 8;
 }
 
 .petala-top-center {
@@ -148,31 +142,31 @@ box-shadow: 0 0 20px #ff7a84;
 
 /* Pétala superior esquerda */
 .petala-top-left {
-width: 22%;
-height: 50%;
-left: 23%;
-top: 40%;
-background: linear-gradient(135deg, #ff5a6b, #ffbf90);
-border-radius: 60% 50% 60% 40% / 100% 100% 70% 60%;
-transform: rotate(-18deg) translateX(40%);;
-box-shadow: 0 0 14px #ff7a7d;
-z-index: 2;
+  width: 22%;
+  height: 50%;
+  left: 23%;
+  top: 40%;
+  background: linear-gradient(135deg, #ff5a6b, #ffbf90);
+  border-radius: 60% 50% 60% 40% / 100% 100% 70% 60%;
+  transform: rotate(-18deg) translateX(40%);
+  box-shadow: 0 0 14px #ff7a7d;
+  z-index: 2;
 }
 
 /* Pétala superior direita */
 .petala-top-right {
-width: 22%;
-height: 50%;
-right: 23%;
-top: 40%;
-background: linear-gradient(135deg, #ff6b78, #ffcb9f);
-border-radius: 50% 60% 40% 60% / 60% 70% 100% 100%;
-transform: rotate(18deg) translateX(-40%);
-box-shadow: 0 0 14px #ff8a88;
-z-index: 2;
+  width: 22%;
+  height: 50%;
+  right: 23%;
+  top: 40%;
+  background: linear-gradient(135deg, #ff6b78, #ffcb9f);
+  border-radius: 50% 60% 40% 60% / 60% 70% 100% 100%;
+  transform: rotate(18deg) translateX(-40%);
+  box-shadow: 0 0 14px #ff8a88;
+  z-index: 2;
 }
 
-/* Pequena animação suave para dar vida */
+/* Animações */
 .flor:hover .petala-left {
   transform: rotate(-40deg) translateX(-12px) translateY(-5px);
 }
@@ -184,4 +178,26 @@ z-index: 2;
 .flor:hover .petala {
   transform: scale(1.05) rotate(0deg);
   filter: drop-shadow(0 3px 5px rgba(255, 100, 100, 0.6));
+}
+
+/* Containers individuais */
+.tulipa-container1,
+.tulipa-container2,
+.tulipa-container3,
+.tulipa-container4,
+.tulipa-container5,
+.tulipa-container6,
+.tulipa-container7,
+.tulipa-container8,
+.tulipa-container9,
+.tulipa-container10,
+.tulipa-container11,
+.tulipa-container12,
+.tulipa-container13,
+.tulipa-container14,
+.tulipa-container15 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
 }
