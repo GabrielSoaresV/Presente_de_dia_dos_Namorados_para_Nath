@@ -35,7 +35,7 @@ html, body {
 .baseflor {
   position: absolute;
   bottom: -19px;
-  left: 47%;
+  left: 18%;
   transform: translateX(-50%);
   width: 57px;
   height: 22px;
@@ -43,8 +43,9 @@ html, body {
   clip-path: ellipse(45% 80% at 50% 0%);
   z-index: 10;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: vibraBase 6s ease-in-out infinite;
+  transform-origin: center;
 }
-
 
 /* Caule com gradiente e sombra */
 .caule {
@@ -57,6 +58,8 @@ html, body {
   z-index: 0;
   margin-top: -107px;
   right: 54%;
+  animation: ventoCaule 6s ease-in-out infinite;
+  transform-origin: bottom center;
 }
 
 /* Flor */
@@ -110,9 +113,7 @@ html, body {
   background: linear-gradient(135deg, #e35d6a, #ffb88c);
   border-radius: 100% 60% 60% 50% / 100% 100% 70% 70%;
   z-index: 6;
-  animation: ventoBrisaComSobeDesce 5s ease-in-out infinite;
-  transform-origin: bottom center;
-  animation-delay: 1.5s;
+  animation-delay: 0s;
 }
 
 .petala-right {
@@ -124,24 +125,20 @@ html, body {
   background: linear-gradient(135deg, #ff6f91, #ffb97c);
   border-radius: 60% 100% 50% 60% / 100% 100% 70% 70%;
   z-index: 6;
-  animation: ventoBrisaComSobeDesce 5s ease-in-out infinite;
-  transform-origin: bottom center;
-  animation-delay: 1.5s;
+  animation-delay: 0.2s;
 }
 
 .petala-center {
   width: 35px;
   height: 55px;
-  left: 28%;
-  bottom: -5%;
+  left: 27.5%; /* centralize entre 23% e 45% */
+  bottom: -3%; /* igual a petala-right */
   background: linear-gradient(135deg, #ff3e55, #ffbd7f);
   border-radius: 70% 70% 45% 45% / 85% 85% 60% 60%;
   border: 2px solid #ff5968;
   box-shadow: 0 0 20px #ff7a84;
   z-index: 8;
-  animation: ventoBrisaComSobeDesce 5s ease-in-out infinite;
-  transform-origin: bottom center;
-  animation-delay: 1.5s;
+  animation-delay: 0.4s;
 }
 
 .petala-top-left {
@@ -190,32 +187,37 @@ html, body {
   margin: 10px;
 }
 
-@keyframes balanco-esquerda {
-  0% { transform: rotate(-3deg); }
-  50% { transform: rotate(-8deg); }
-  100% { transform: rotate(-3deg); }
+.petala-left,
+.petala-right,
+.petala-center,
+.petala-top-left,
+.petala-top-right {
+  animation: ventoPetala 4.5s ease-in-out infinite;
+  transform-origin: bottom center;
 }
 
-@keyframes balanco-direita {
-  0% { transform: rotate(3deg); }
-  50% { transform: rotate(8deg); }
-  100% { transform: rotate(3deg); }
-}
-
-@keyframes balanco-central {
+@keyframes ventoCaule {
   0% { transform: rotate(0deg); }
-  50% { transform: rotate(2deg); }
+  20% { transform: rotate(2deg); }
+  40% { transform: rotate(-2deg); }
+  60% { transform: rotate(1.5deg); }
+  80% { transform: rotate(-1deg); }
   100% { transform: rotate(0deg); }
 }
 
-@keyframes ventoBrisaComSobeDesce {
-  0% {
-    transform: rotate(0deg) translateY(0);
-  }
-  50% {
-    transform: rotate(10deg) translateY(-5px);
-  }
-  100% {
-    transform: rotate(0deg) translateY(0);
-  }
+@keyframes ventoPetala {
+  0% { transform: rotate(0deg) scaleY(1); }
+  25% { transform: rotate(-5deg) scaleY(1.05); }
+  50% { transform: rotate(3deg) scaleY(0.98); }
+  75% { transform: rotate(-2deg) scaleY(1.03); }
+  100% { transform: rotate(0deg) scaleY(1); }
+}
+
+@keyframes vibraBase {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(2deg); }
+  40% { transform: rotate(-2deg); }
+  60% { transform: rotate(1.5deg); }
+  80% { transform: rotate(-1deg); }
+  100% { transform: rotate(0deg); }
 }
