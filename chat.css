@@ -80,6 +80,33 @@ html, body {
   z-index: 4;
 }
 
+.petala-top-left {
+  position: relative;
+  width: 22%;
+  height: 50%;
+  top: 56%;
+  background: linear-gradient(113deg, #ff5a6b, #ffbf90);
+  border-radius: 60% 50% 60% 40% / 100% 100% 70% 60%;
+  transform: rotate(45deg) translateX(10px);
+
+  box-shadow: 0 0 14px #ff7a7d;
+  z-index: 4;
+}
+
+
+
+.petala-top-right {
+  width: 22%;
+  height: 50%;
+  left: 42%;     /* ligeiramente mais à esquerda que a petala-right (45%) */
+  top: 40%;
+  background: linear-gradient(135deg, #ff6b78, #ffcb9f);
+  border-radius: 50% 60% 40% 60% / 60% 70% 100% 100%;
+  transform: rotate(18deg) translateX(-40%);
+  box-shadow: 0 0 14px #ff8a88;
+  z-index: 4;    /* entre center (5) e right (3) */
+}
+
 /* Caule e base */
 .flor-topo {
   display: flex;
