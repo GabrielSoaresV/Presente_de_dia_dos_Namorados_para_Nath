@@ -10,16 +10,6 @@ html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.tulipa-container {
-  position: relative;
-  /* REMOVIDO margin-bottom: 100%; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding-bottom: 0px;
-}
-
 .jardim {
   display: flex;
   flex-wrap: wrap;
@@ -32,34 +22,13 @@ html, body {
   padding: 20px;
 }
 
-.baseflor {
+.tulipa-container {
   position: absolute;
-  bottom: -19px;
-  left: 18%;
-  transform: translateX(-50%);
-  width: 57px;
-  height: 22px;
-  background: linear-gradient(180deg, #2e7d32, #1b5e20);
-  clip-path: ellipse(45% 80% at 50% 0%);
-  z-index: 10;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  animation: vibraBase 6s ease-in-out infinite;
-  transform-origin: center;
-}
-
-/* Caule com gradiente e sombra */
-.caule {
-  position: relative;
-  width: 6px;
-  height: 100px;
-  background: linear-gradient(180deg, #1b5e20 0%, #2e7d32 100%);
-  border-radius: 12px 12px 4px 4px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 0;
-  margin-top: -107px;
-  right: 54%;
-  animation: ventoCaule 6s ease-in-out infinite;
-  transform-origin: bottom center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 0px;
 }
 
 /* Flor */
@@ -69,11 +38,103 @@ html, body {
   bottom: 100px;
   width: 100px; /* reduzido para melhor encaixe */
   height: 100px; /* reduzido para melhor encaixe */
-  z-index: 10;
+  z-index: 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  transform-origin: top;
 }
+
+/* Pétalas - base comum */
+.petala {
+  position: absolute;
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  border-radius: 60% 40% 60% 40% / 100% 100% 60% 60%;
+  box-shadow: 0 0 18px #ff796c;
+  border: 1.5px solid #ff3e3e;
+  opacity: 0.95;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+  transform-origin: bottom center;
+}
+
+.petala-left {
+  position: absolute;
+  width: 28px;
+  height: 50px;
+  left: 18%;
+  bottom: -3px;
+  transform: rotate(-3deg);
+  background: linear-gradient(135deg, #e35d6a, #ffb88c);
+  border-radius: 100% 60% 60% 50% / 100% 100% 70% 70%;
+  z-index: 6;
+  animation-delay: 0s;
+}
+
+.petala-right {
+  position: absolute;
+  width: 28px;
+  height: 50px;
+  left: 45%;
+  bottom: -3%;
+  transform: rotate(3deg);
+  background: linear-gradient(135deg, #ff6f91, #ffb97c);
+  border-radius: 60% 100% 50% 60% / 100% 100% 70% 70%;
+  z-index: 6;
+  animation-delay: 0.2s;
+}
+
+.petala-center {
+  position: absolute;
+  width: 35px;
+  height: 55px;
+  left: 27.5%;
+  bottom: -3%; 
+  background: linear-gradient(135deg, #ff3e55, #ffbd7f);
+  border-radius: 70% 70% 45% 45% / 85% 85% 60% 60%;
+  border: 2px solid #ff5968;
+  box-shadow: 0 0 20px #ff7a84;
+  z-index: 8;
+  animation-delay: 0.4s;
+}
+
+.baseflor {
+  width: 50px;
+  height: 20px;
+  background: radial-gradient(circle at center, #2e7d32, #1b5e20);
+  border-radius: 50% 50% 40% 40% / 70% 70% 30% 30%;
+  margin-top: -6px;
+  position: relative;
+  z-index: 11; /* entre o caule (1) e as pétalas (3+) */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+
+}
+/* Caule com gradiente e sombra */
+.flor-topo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: ventoFlor 5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.caule-superior {
+  position: relative;
+  width: 6px;
+  height: 70px;
+  background: linear-gradient(180deg, #1b5e20 0%, #2e7d32 100%);
+  border-radius: 12px 12px 4px 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.caule-fixa {
+  width: 6px;
+  height: 30px;
+  background: #1b5e20;
+  border-radius: 0 0 4px 4px;
+  z-index: 1;
+}
+
 
 /* Centro da flor */
 .centro {
@@ -89,56 +150,6 @@ html, body {
   border: 1px solid #f44336;
   filter: drop-shadow(0 0 4px #ff6f61);
   z-index: 3;
-}
-
-/* Pétalas - base comum */
-.petala {
-  position: absolute;
-  background: linear-gradient(135deg, #ff5f6d, #ffc371);
-  border-radius: 60% 40% 60% 40% / 100% 100% 60% 60%;
-  box-shadow: 0 0 18px #ff796c;
-  border: 1.5px solid #ff3e3e;
-  opacity: 0.95;
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
-  transform-origin: bottom center;
-}
-
-/* Ajustando tamanhos das pétalas para combinar com a flor menor */
-.petala-left {
-  width: 28px;
-  height: 50px;
-  left: 18%;
-  bottom: -3px;
-  transform: rotate(-3deg);
-  background: linear-gradient(135deg, #e35d6a, #ffb88c);
-  border-radius: 100% 60% 60% 50% / 100% 100% 70% 70%;
-  z-index: 6;
-  animation-delay: 0s;
-}
-
-.petala-right {
-  width: 28px;
-  height: 50px;
-  left: 45%;
-  bottom: -3%;
-  transform: rotate(3deg);
-  background: linear-gradient(135deg, #ff6f91, #ffb97c);
-  border-radius: 60% 100% 50% 60% / 100% 100% 70% 70%;
-  z-index: 6;
-  animation-delay: 0.2s;
-}
-
-.petala-center {
-  width: 35px;
-  height: 55px;
-  left: 27.5%; /* centralize entre 23% e 45% */
-  bottom: -3%; /* igual a petala-right */
-  background: linear-gradient(135deg, #ff3e55, #ffbd7f);
-  border-radius: 70% 70% 45% 45% / 85% 85% 60% 60%;
-  border: 2px solid #ff5968;
-  box-shadow: 0 0 20px #ff7a84;
-  z-index: 8;
-  animation-delay: 0.4s;
 }
 
 .petala-top-left {
@@ -187,37 +198,57 @@ html, body {
   margin: 10px;
 }
 
+.tulipa-container1 {
+  position: absolute;
+  bottom: 10px;
+}
+
+/* PETALAS */
 .petala-left,
 .petala-right,
 .petala-center,
 .petala-top-left,
 .petala-top-right {
-  animation: ventoPetala 4.5s ease-in-out infinite;
+  animation: ventoFlor 5s ease-in-out infinite;
   transform-origin: bottom center;
 }
+.baseflor {
+  animation: ventoFlor 5s ease-in-out infinite;
+}
 
+/* CAULE */
+.caule {
+  animation: ventoFlor 5s ease-in-out infinite;
+}
+/* KEYFRAMES */
 @keyframes ventoCaule {
   0% { transform: rotate(0deg); }
-  20% { transform: rotate(2deg); }
-  40% { transform: rotate(-2deg); }
-  60% { transform: rotate(1.5deg); }
-  80% { transform: rotate(-1deg); }
+  25% { transform: rotate(1.5deg); }
+  50% { transform: rotate(-1.5deg); }
+  75% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes vibraBase {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(1.5deg); }
+  50% { transform: rotate(-1.5deg); }
+  75% { transform: rotate(1deg); }
   100% { transform: rotate(0deg); }
 }
 
 @keyframes ventoPetala {
   0% { transform: rotate(0deg) scaleY(1); }
-  25% { transform: rotate(-5deg) scaleY(1.05); }
-  50% { transform: rotate(3deg) scaleY(0.98); }
-  75% { transform: rotate(-2deg) scaleY(1.03); }
+  25% { transform: rotate(-2deg) scaleY(1.02); }
+  50% { transform: rotate(1.5deg) scaleY(0.98); }
+  75% { transform: rotate(-1deg) scaleY(1.01); }
   100% { transform: rotate(0deg) scaleY(1); }
 }
 
-@keyframes vibraBase {
-  0% { transform: rotate(0deg); }
-  20% { transform: rotate(2deg); }
-  40% { transform: rotate(-2deg); }
-  60% { transform: rotate(1.5deg); }
-  80% { transform: rotate(-1deg); }
+@keyframes ventoFlor {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-3deg); }
+  50%  { transform: rotate(2deg); }
+  75%  { transform: rotate(-1.5deg); }
   100% { transform: rotate(0deg); }
 }
