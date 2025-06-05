@@ -38,10 +38,11 @@ html, body {
   background: linear-gradient(135deg, #ff5f6d, #ffc371);
   border-radius: 60% 40% 60% 40% / 100% 100% 60% 60%;
   box-shadow: 0 0 18px #ff796c;
+  border: 1.5px solid #ff3e3e;
   opacity: 0.95;
   filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
   transform-origin: bottom center;
-  animation: ventoFlor 8s ease-in-out infinite;
+  animation: ventoFlor 5s ease-in-out infinite;
   animation-fill-mode: forwards;
 }
 
@@ -54,7 +55,6 @@ html, body {
   background: linear-gradient(135deg, #e35d6a, #ffb88c);
   border-radius: 100% 60% 60% 50% / 100% 100% 70% 70%;
   z-index: 4;
-  border: 1.5px solid #ff3e3e;
 }
 
 .petala-right {
@@ -66,7 +66,6 @@ html, body {
   background: linear-gradient(135deg, #ff6f91, #ffb97c);
   border-radius: 60% 100% 50% 60% / 100% 100% 70% 70%;
   z-index: 4;
-  border: 1.5px solid #ff3e3e;
 }
 
 .petala-center {
@@ -79,31 +78,33 @@ html, body {
   border: 2px solid #ff5968;
   box-shadow: 0 0 20px #ff7a84;
   z-index: 4;
-  border: 1.5px solid #ff3e3e;
 }
 
 .petala-top-left {
-  width: 28px;
-  height: 50px;
-  left: 18%;
-  bottom: -3px;
-  transform: rotate(-3deg);
-  background: linear-gradient(135deg, #e35d6a, #ffb88c);
-  border-radius: 100% 60% 60% 50% / 100% 100% 70% 70%;
-  z-index: 1;
-  border: 1.5px solid #ff3e3e;
+  position: relative;
+  width: 22%;
+  height: 50%;
+  top: 56%;
+  background: linear-gradient(113deg, #ff5a6b, #ffbf90);
+  border-radius: 60% 50% 60% 40% / 100% 100% 70% 60%;
+  transform: rotate(45deg) translateX(10px);
+
+  box-shadow: 0 0 14px #ff7a7d;
+  z-index: 4;
 }
 
+
+
 .petala-top-right {
-  width: 28px;
-  height: 50px;
-  left: 45%;
-  bottom: -3%;
-  transform: rotate(3deg);
-  background: linear-gradient(135deg, #ff6f91, #ffb97c);
-  border-radius: 60% 100% 50% 60% / 100% 100% 70% 70%;
-  z-index: 1;
-  border: 1.5px solid #ff3e3e;
+  width: 22%;
+  height: 50%;
+  left: 42%;     /* ligeiramente mais à esquerda que a petala-right (45%) */
+  top: 40%;
+  background: linear-gradient(135deg, #ff6b78, #ffcb9f);
+  border-radius: 50% 60% 40% 60% / 60% 70% 100% 100%;
+  transform: rotate(18deg) translateX(-40%);
+  box-shadow: 0 0 14px #ff8a88;
+  z-index: 4;    /* entre center (5) e right (3) */
 }
 
 /* Caule e base */
@@ -111,7 +112,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: ventoFlor 8s ease-in-out infinite;
+  animation: ventoFlor 5s ease-in-out infinite;
   transform-origin: bottom center;
 }
 
@@ -125,7 +126,7 @@ html, body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   z-index: 1;
   transform-origin: bottom center;
-  animation: ventoCaule 8s ease-in-out infinite;
+  animation: ventoCaule 5s ease-in-out infinite;
 }
 
 .caule-fixa {
@@ -146,37 +147,28 @@ html, body {
   background: linear-gradient(180deg, #2e7d32, #1b5e20);
   clip-path: ellipse(45% 80% at 50% 0%);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  animation: ventoFlor 8s ease-in-out infinite;
+  animation: ventoFlor 5s ease-in-out infinite;
   transform-origin: center;
   margin-top: 0px;
   z-index: 6;
 }
 
-@keyframes ventoTopPetala {
-  0%   { transform: rotate(0deg); }
-  25%  { transform: rotate(6deg); }
-  50%  { transform: rotate(-6deg); }
-  75%  { transform: rotate(4deg); }
-  100% { transform: rotate(0deg); }
-}
-
 /* Animações */
 @keyframes ventoFlor {
   0%   { transform: rotate(0deg); }
-  25%  { transform: rotate(-10deg); }
-  50%  { transform: rotate(10deg); }
-  75%  { transform: rotate(-8deg); }
+  25%  { transform: rotate(-20deg); }
+  50%  { transform: rotate(5deg); }
+  75%  { transform: rotate(-2.5deg); }
   100% { transform: rotate(0deg); }
 }
 
 @keyframes ventoCaule {
   0%   { transform: rotate(0deg); }
-  25%  { transform: rotate(-2deg); }
-  50%  { transform: rotate(2deg); }
-  75%  { transform: rotate(-1.5deg); }
+  25%  { transform: rotate(-1deg); }
+  50%  { transform: rotate(1deg); }
+  75%  { transform: rotate(-0.5deg); }
   100% { transform: rotate(0deg); }
 }
-
 /* Abertura das pétalas */
 @keyframes abrirPetalaEsquerda {
   to { transform: rotate(-45deg); }
