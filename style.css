@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+  background: #000000;
+}
+
+.main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.f {
+  position: absolute;
+  width: 180px;
+  height: 300px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.flor {
+  position: relative;
+  width: 100px;
+  height: 200px;
+}
+
+.petala {
+  position: absolute;
+  width: 30px;
+  height: 48px;
+  background: linear-gradient(135deg, #e35d6a, #ffb88c);
+  border-radius: 100% 60% 60% 50% / 100% 100% 70% 70%;
+  border: 1.5px solid #ff3e3e;
+  transform-origin: bottom;
+  opacity: 0.95;
+  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.1));
+  animation-fill-mode: forwards;
+  animation: ventoFlor   8s ease-in-out infinite;
+}
+
+.petala-center {
+  left: 35%;
+  top: 8%; 
+  z-index: 2;
+}
+
+.petala-left {
+  left: 20%;
+  top: 9%; 
+  z-index: 2;
+  transform: rotate(-3deg);
+}
+
+.petala-right {
+  left: 50%;
+  top: 9%; 
+  z-index: 2;
+  transform: rotate(3deg);
+}
+
+.petala-top-left {
+  left: 40%;
+  top: 8%; 
+  z-index: 1;
+  transform: rotate(-20deg);
+}
+
+.petala-top-right {
+  left: 30%;
+  top: 8%; 
+  z-index: 1;
+  transform: rotate(20deg);
+}
+
+.caule {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 6px;
+  height: 75%;
+  transform: translateX(-50%);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(22, 54, 22) 20%, rgb(19, 87, 13) 80%); 
+  border-radius: 12px 12px 4px 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  animation: ventoCaule 8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.baseflor {
+  position: absolute;
+  width: 85%; 
+  top: 25.5%;
+  left: -2%;
+  border-radius: 50% 50% 0 0; 
+  z-index: 3;
+  transform-origin: bottom;
+  animation: ventoBase 8s ease-in-out infinite;
+}
+
+.folha-esquerda {
+  position: absolute;
+  bottom: -5px;
+  right: 30%;
+  width: 80%;
+  height: 55%;
+  border-radius: 0 50% 50% 0;
+  transform: rotate(3deg);
+  z-index: 4;
+  animation: ventoCaule 8s ease-in-out infinite;
+}
+
+.folha-direita {
+  position: absolute;
+  bottom: -5px;
+  left: 25%;
+  width: 80%;
+  height: 45%;
+  border-radius: 0 50% 50% 0;
+  transform: rotate(8deg);
+  z-index: 4;
+}
+
+@keyframes ventoBase {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-6deg); }
+  50%  { transform: rotate(6deg); }
+  75%  { transform: rotate(-6deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Animações */
+@keyframes ventoFlor {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-12deg); }
+  50%  { transform: rotate(8deg); }
+  75%  { transform: rotate(-8deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes ventoCaule {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-2deg); }
+  50%  { transform: rotate(2deg); }
+  75%  { transform: rotate(-1.5deg); }
+  100% { transform: rotate(0deg); }
+}

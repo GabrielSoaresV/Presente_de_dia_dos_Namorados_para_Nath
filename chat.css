@@ -175,11 +175,11 @@ html, body {
   animation: ventoCaule 8s ease-in-out infinite;
   z-index: 10;
 }
-@keyframes ventoTopPetala {
+@keyframes ventoBase {
   0%   { transform: rotate(0deg); }
-  25%  { transform: rotate(6deg); }
-  50%  { transform: rotate(-6deg); }
-  75%  { transform: rotate(4deg); }
+  25%  { transform: rotate(-8deg); }
+  50%  { transform: rotate(6deg); }
+  75%  { transform: rotate(-8deg); }
   100% { transform: rotate(0deg); }
 }
 
