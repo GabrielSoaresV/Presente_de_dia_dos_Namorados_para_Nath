@@ -3,19 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tulipas Responsivas</title>
-  <link rel="stylesheet" href="teste.css">
+  <title>Tulipas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="main">
-  <div class="flor">
-    <div class="f" style="top: 50px; left: 100px;">
-      <div class="receptaculo"></div> <!-- AQUI -->
+  <div class="f" style="top: 50px; left: 100px;">
+    <div class="flor">
       <div class="petala petala-left"></div>
       <div class="petala petala-right"></div>
       <div class="petala petala-center"></div>
       <div class="petala petala-top-left"></div>
       <div class="petala petala-top-right"></div>
+      <div class="baseflor"></div>
+      <svg class="baseflor" xmlns="http://www.w3.org/2000/svg" viewBox="7 14 2 1">
+         <defs>
+          <linearGradient id="grad-base" x1="0%" y1="100%" x2="0%" y2="0%"> 
+            <stop offset="5%" stop-color="rgba(36, 87, 36, 1)"/>
+            <stop offset="95%" stop-color="rgba(30, 150, 20, 1)"/>
+          </linearGradient>
+         </defs>
+        <path d="M8.272 14.633 C8.484 14.615 8.773 14.483 8.935 14.307 C8.902 14.208 8.746 14.215 8.683 14.234 C8.617 14.258 8.614 14.321 8.531 14.285 C8.477 14.257 8.371 14.225 8.309 14.222 C8.189 14.199 8.069 14.21 7.994 14.256 C7.944 14.28 7.933 14.315 7.885 14.311 C7.834 14.304 7.812 14.172 7.571 14.282 C7.633 14.383 7.745 14.459 7.865 14.517 C7.954 14.568 8.119 14.626 8.271 14.635" fill="url(#grad-base)"/>
+       </svg>
       <div class="caule"></div>
       <div class="folha"></div>
     </div>
