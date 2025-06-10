@@ -20,24 +20,25 @@ body {
 
 .f {
   position: absolute;
-  width: 180px;
-  height: 300px;
+  width: 22vw;
+  height: 40vh;
   display: flex;
   align-items: end;
   justify-content: center;
+  background: red;
 }
 
 .flor {
   position: relative;
-  width: 100px;
-  height: 200px;
-  animation: inclinarFlor 8s ease-in-out infinite;
+  width: 20vw;
+  height: 40vh;
+  animation: inclinarFlor 6s ease-in-out infinite;
   transform-origin: bottom center;
 }
 
 .petala {
   position: absolute;
-  width: 30px;
+  width: 6vw;
   height: 45px;
   background: linear-gradient(135deg, #e35d6a, #ffb88c);
   border-radius: 100% 60% 60% 50% / 100% 100% 70% 70%;
@@ -45,7 +46,6 @@ body {
   transform-origin: bottom;
   opacity: 0.95;
   animation-fill-mode: forwards;
-  animation: ventoFlor 6s ease-in-out infinite;
 
   /* AURA BRILHANTE */
   box-shadow:
@@ -102,7 +102,6 @@ body {
   border-radius: 12px 12px 4px 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   z-index: 1;
-  animation: ventoCaule 6s ease-in-out infinite;
   transform-origin: bottom center;
 }
 
@@ -114,7 +113,6 @@ body {
   border-radius: 50% 50% 0 0;
   z-index: 3;
   transform-origin: bottom;
-  animation: ventoBase 6s ease-in-out infinite;
 }
 
 .folha {
@@ -124,7 +122,6 @@ body {
   bottom: 15%;
   opacity: 0.9;
   filter: drop-shadow(0 0 3px rgb(0, 0, 0));
-  animation: ventoFolha 6s ease-in-out infinite;
   transform-origin: center;
 }
 
@@ -137,48 +134,12 @@ body {
   transform-origin: center;
 }
 
-@keyframes ventoFlor {
-  0%, 100% {
-    transform: rotate(-3deg);
-  }
-  50% {
-    transform: rotate(3deg);
-  }
-}
-
-@keyframes ventoCaule {
-  0%, 100% {
-    transform: rotate(2deg);
-  }
-  50% {
-    transform: rotate(-2deg);
-  }
-}
-
-@keyframes ventoBase {
-  0%, 100% {
-    transform: rotate(3deg);
-  }
-  50% {
-    transform: rotate(-3deg);
-  }
-}
-
-@keyframes ventoFolha {
-  0%, 100% {
-    transform: rotate(-8deg);
-  }
-  50% {
-    transform: rotate(8deg);
-  }
-}
-
 @keyframes inclinarFlor {
   0%, 100% {
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(15deg);
+    transform: rotate(10deg);
   }
 }
 

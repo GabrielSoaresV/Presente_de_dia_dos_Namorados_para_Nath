@@ -219,3 +219,91 @@ html, body {
   animation: abrirPetalaDireita 0.7s forwards;
 }
 
+/* Responsividade ajustada ao seu código */
+@media (max-width: 768px) {
+  /* Ajuste geral da container da flor */
+  .flor {
+    width: 80px;
+    height: 160px;
+  }
+
+  /* Ajuste das pétalas */
+  .petala {
+    width: 20px;
+    height: 40px;
+  }
+
+  /* Ajuste do caule superior */
+  .caule-superior {
+    width: 4px;
+    height: 80px;
+  }
+
+  /* Ajuste do caule fixo */
+  .caule-fixa {
+    width: 4px;
+    height: 30px;
+  }
+
+  /* Ajuste da base da flor */
+  .baseflor {
+    width: 70%;
+    height: 60%;
+  }
+
+  /* Ajuste das folhas esquerda e direita */
+  .folha-esquerda,
+  .folha-direita {
+    width: 80%;
+    height: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajuste geral da container da flor */
+  .flor {
+    width: 70px;
+    height: 140px;
+  }
+
+  /* Ajuste das pétalas */
+  .petala {
+    width: 18px;
+    height: 36px;
+  }
+
+  /* Ajuste do caule superior */
+  .caule-superior {
+    width: 3.5px;
+    height: 70px;
+  }
+
+  /* Ajuste do caule fixo */
+  .caule-fixa {
+    width: 3.5px;
+    height: 25px;
+  }
+
+  /* Ajuste da base da flor */
+  .baseflor {
+    width: 65%;
+    height: 55%;
+  }
+
+  .folha-direita {
+    width: 70%;
+    height: 33%;
+    position: absolute;
+    top: 63%;
+    right: 4%;
+  }
+
+  .folha-esquerda {
+    width: 70%;
+    height: 33%;
+    position: absolute;
+    top: 63%;
+    right: -4%;
+  }
+
+}
