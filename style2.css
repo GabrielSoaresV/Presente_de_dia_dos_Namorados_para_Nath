@@ -1,0 +1,205 @@
+/* Seu CSS original aqui */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+  background: #000000;
+}
+
+.main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.f {
+  position: absolute;
+  width: 180px;
+  height: 300px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.flor {
+  position: relative;
+  width: 100px;
+  height: 200px;
+  animation: inclinarFlor 8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.petala {
+  position: absolute;
+  width: 30px;
+  height: 45px;
+  background: linear-gradient(135deg, #e35d6a, #ffb88c);
+  border-radius: 100% 60% 60% 50% / 100% 100% 70% 70%;
+  border: 1.5px solid #ff3e3e;
+  transform-origin: bottom;
+  opacity: 0.95;
+  animation-fill-mode: forwards;
+  animation: ventoFlor 6s ease-in-out infinite;
+
+  /* AURA BRILHANTE */
+  box-shadow:
+    0 0 8px rgba(255, 62, 62, 0.6),
+    0 0 12px rgba(255, 150, 150, 0.4),
+    0 0 16px rgba(255, 100, 100, 0.3);
+
+  /* Aqui adiciono a transição para suavizar o efeito do transform quando a classe abrir for adicionada */
+  transition: transform 0.7s ease;
+}
+
+.petala-center {
+  left: 35%;
+  top: 9%; 
+  z-index: 2;
+}
+
+.petala-left {
+  left: 20%;
+  top: 10%; 
+  z-index: 2;
+  transform: rotate(-3deg);
+}
+
+.petala-right {
+  left: 50%;
+  top: 10%; 
+  z-index: 2;
+  transform: rotate(3deg);
+}
+
+.petala-top-left {
+  left: 40%;
+  top: 9%; 
+  z-index: 1;
+  transform: rotate(-20deg);
+}
+
+.petala-top-right {
+  left: 30%;
+  top: 9%; 
+  z-index: 1;
+  transform: rotate(20deg);
+}
+
+.caule {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 6px;
+  height: 75%;
+  transform: translateX(-50%);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(22, 54, 22) 20%, rgb(19, 87, 13) 80%); 
+  border-radius: 12px 12px 4px 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  animation: ventoCaule 6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.baseflor {
+  position: absolute;
+  width: 85%;
+  top: 25.5%;
+  left: -2%;
+  border-radius: 50% 50% 0 0;
+  z-index: 3;
+  transform-origin: bottom;
+  animation: ventoBase 6s ease-in-out infinite;
+}
+
+.folha {
+  position: absolute;
+  width: 40px;
+  height: 60px;
+  bottom: 15%;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 3px rgb(0, 0, 0));
+  animation: ventoFolha 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.folha-esquerda {
+  left: 20%;
+}
+
+.folha-direita {
+  right: 20%;
+  transform-origin: center;
+}
+
+@keyframes ventoFlor {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes ventoCaule {
+  0%, 100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes ventoBase {
+  0%, 100% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes ventoFolha {
+  0%, 100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes inclinarFlor {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+/* NOVA CLASSE PARA ABRIR AS PÉTALAS */
+
+.flor.abrir .petala-left {
+  transform: rotate(-55deg) translateX(-15px) translateY(10px);
+}
+
+.flor.abrir .petala-right {
+  transform: rotate(55deg) translateX(15px) translateY(10px);
+}
+
+.flor.abrir .petala-top-left {
+  transform: rotate(-80deg) translateX(-15px) translateY(-8px);
+}
+
+.flor.abrir .petala-top-right {
+  transform: rotate(80deg) translateX(15px) translateY(-8px);
+}
+
+.flor.abrir .petala-center {
+  transform: translateY(-20px);
+}
